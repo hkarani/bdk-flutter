@@ -38,8 +38,11 @@ jobs:
       - name: Install Specific NDK
         if: (matrix.os == 'ubuntu-latest')
         run: sdkmanager --install "ndk;26.3.11579264"
+      - name: Select Xcode 15.2
+        if: (matrix.os == 'macos-13')
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app
       - name: Precompile (with iOS)
-        if: (matrix.os == 'macOS-latest')
+        if: (matrix.os == 'macos-13')
         run: dart run build_tool precompile-binaries -v --manifest-dir=../../rust --repository=hkarani/bdk-flutter
         working-directory: cargokit/build_tool
         env:
