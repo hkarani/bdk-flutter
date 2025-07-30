@@ -60,6 +60,10 @@ jobs:
         working-directory: rust
         env:
           RUSTC_WRAPPER: "${{ github.workspace }}/rust/log-rustc.sh"
+          RUSTFLAGS: >
+            --remap-path-prefix=${{ github.workspace }}=/src
+            --remap-path-prefix=/Users/runner=/src
+            --remap-path-prefix=/Users/mac=/src
         run: |
           cargo build --release --target aarch64-apple-ios
 
