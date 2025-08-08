@@ -75,4 +75,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: precompiled-binaries
-          path: /root/lib/linux
+          path: home/runner/work/bdk-flutter/bdk-flutter/tmp
