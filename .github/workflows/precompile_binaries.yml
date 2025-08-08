@@ -60,8 +60,8 @@ jobs:
           CARGOKIT_ROOT_PROJECT_DIR: "../rust"
           CARGOKIT_TARGET_PLATFORMS: "android-arm64"
           CARGOKIT_CONFIGURATION: "release"
-          CARGOKIT_TARGET_TEMP_DIR: "home/runner/work/bdk-flutter/bdk-flutter/rust"
-          CARGOKIT_MANIFEST_DIR: "/home/runner/work/bdk-flutter/bdk-flutter/rust"
+          CARGOKIT_TARGET_TEMP_DIR: "tmp"
+          CARGOKIT_MANIFEST_DIR: "out"
           CARGOKIT_OUTPUT_DIR: "home/runner/work/bdk-flutter/bdk-flutter/rust"
           CARGOKIT_MIN_SDK_VERSION: "21"
           CARGOKIT_NDK_VERSION: "26.3.11579264"
@@ -71,7 +71,7 @@ jobs:
 
       - name: List precompiled binaries directory
         if: matrix.os == 'ubuntu-latest'
-        run: ls -la /home/runner/work/bdk-flutter/bdk-flutter/rust/home
+        run: out
 
       # Upload artifacts from CARGOKIT_TARGET_TEMP_DIR
       - name: Upload precompiled binaries
@@ -79,4 +79,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: precompiled-binaries
-          path: home/runner/work/bdk-flutter/bdk-flutter/rust
+          path: out
