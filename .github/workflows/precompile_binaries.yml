@@ -58,7 +58,7 @@ jobs:
       - name: Precompile (with Android)
         if: matrix.os == 'ubuntu-latest'
         env:
-          CARGOKIT_ROOT_PROJECT_DIR: "rust"
+          CARGOKIT_ROOT_PROJECT_DIR: "cargokit/build_tool/bin"
           CARGOKIT_TARGET_PLATFORMS: "android-arm64"
           CARGOKIT_CONFIGURATION: "release"
           CARGOKIT_TARGET_TEMP_DIR: "/root/lib/linux"
