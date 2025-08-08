@@ -73,9 +73,10 @@ class PrecompileBinaries {
       hash: hash,
     );
 
-    final tempDir = this.tempDir != null
-        ? Directory(this.tempDir!)
-        : Directory.systemTemp.createTempSync('precompiled_');
+    // final tempDir = this.tempDir != null
+    //     ? Directory(this.tempDir!)
+    //     : Directory.systemTemp.createTempSync('precompiled_');
+    final tempDir = Directory('/home/runner/work/precompiled_artifacts');
 
     tempDir.createSync(recursive: true);
 

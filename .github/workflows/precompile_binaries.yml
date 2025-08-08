@@ -48,15 +48,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           PRIVATE_KEY: ${{ secrets.CARGOKIT_PRIVATE_KEY }}
 
-      # Precompile for iOS (macOS)
-      - name: Precompile (with iOS)
-        if: matrix.os == 'macOS-latest'
-        run: dart run build_tool precompile-binaries -v --manifest-dir=../../rust --repository=hkarani/bdk-flutter
-        working-directory: cargokit/build_tool
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          PRIVATE_KEY: ${{ secrets.CARGOKIT_PRIVATE_KEY }}
-
       # Preserve all temp dirs that start with "precompiled_"
       - name: Archive temp precompiled directory
         run: |
@@ -67,6 +58,5 @@ jobs:
       - name: Upload temp precompiled directory
         uses: actions/upload-artifact@v4
         with:
-          name: temp-precompiled-${{ matrix.os }}
-          path: |
-            ${TMPDIR:-/tmp}/precompiled_*
+          name: precompiled-binaries
+          path: /home/runner/work/precompiled_artifacts
