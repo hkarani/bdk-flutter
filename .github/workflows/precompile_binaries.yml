@@ -55,6 +55,7 @@ jobs:
       # Precompile for Android (Linux)
       - name: Precompile (with Android)
         if: matrix.os == 'ubuntu-latest'
+        working-directory: cargokit/build_tool/bin
         env:
           CARGOKIT_ROOT_PROJECT_DIR: "cargokit/build_tool/"
           CARGOKIT_TARGET_PLATFORMS: "android-arm64"
