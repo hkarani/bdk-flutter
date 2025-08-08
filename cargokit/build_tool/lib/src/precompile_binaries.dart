@@ -166,8 +166,8 @@ class PrecompileBinaries {
       }
     }
 
-    _log.info('Cleaning up');
-    tempDir.deleteSync(recursive: true);
+    // _log.info('Cleaning up');
+    // tempDir.deleteSync(recursive: true);
   }
 
   Future<Release> _getOrCreateRelease({
