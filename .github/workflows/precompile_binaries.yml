@@ -69,6 +69,10 @@ jobs:
           CARGOKIT_JAVA_HOME: "/usr/local/lib/jvm/java-21-openjdk-amd64"
         run: dart run build_tool build-gradle
 
+      - name: List precompiled binaries directory
+        if: matrix.os == 'ubuntu-latest'
+        run: ls -la /home/runner/work/bdk-flutter/bdk-flutter/rust
+
       # Upload artifacts from CARGOKIT_TARGET_TEMP_DIR
       - name: Upload precompiled binaries
         if: matrix.os == 'ubuntu-latest'
