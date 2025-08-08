@@ -71,7 +71,7 @@ jobs:
 
       - name: List precompiled binaries directory
         if: matrix.os == 'ubuntu-latest'
-        run: ls -la /home/runner/work/bdk-flutter/bdk-flutter/rust
+        run: ls -la /home/runner/work/bdk-flutter/bdk-flutter/rust/home
 
       # Upload artifacts from CARGOKIT_TARGET_TEMP_DIR
       - name: Upload precompiled binaries
