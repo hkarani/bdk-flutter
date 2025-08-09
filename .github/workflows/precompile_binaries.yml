@@ -18,7 +18,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: 1.88.0
           override: true
       - name: Configure Cargo.toml optimizations
         run: |
