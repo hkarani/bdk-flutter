@@ -53,4 +53,4 @@ jobs:
         with:
           name: temp-directory
           path: |
-            ${{ github.workspace }}/temp
+            ${{ github.workspace }}/rust/target
