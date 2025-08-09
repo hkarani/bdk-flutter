@@ -52,4 +52,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: temp-directory
-          path: precompiled_cadac294bb4271383eb6511d484c2486
+          path: |
+            ${{ github.workspace }}/temp
