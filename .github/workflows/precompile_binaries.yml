@@ -41,7 +41,7 @@ jobs:
 
       - name: Precompile (with Android)
         if: (matrix.os == 'ubuntu-latest')
-        run: dart run build_tool precompile-binaries -v --manifest-dir=../../rust --temp-dir=${{ github.workspace }}/rust/target --repository=hkarani/bdk-flutter --android-sdk-location=/usr/local/lib/android/sdk --android-ndk-version=26.3.11579264 --android-min-sdk-version=23
+        run: dart run build_tool precompile-binaries -v --manifest-dir=../../rust --temp-dir=${{ github.workspace }}/rusty/target --repository=hkarani/bdk-flutter --android-sdk-location=/usr/local/lib/android/sdk --android-ndk-version=26.3.11579264 --android-min-sdk-version=23
         working-directory: cargokit/build_tool
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
